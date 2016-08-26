@@ -1,35 +1,10 @@
-# Copyright 2013, Nathan Milford
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-# To Install:
-#
-# sudo yum -y install rpmdevtools && rpmdev-setuptree
-# wget https://raw.github.com/nmilford/rpm-etcd/master/etcd.spec -O ~/rpmbuild/SPECS/etcd.spec
-# wget https://github.com/coreos/etcd/releases/download/v2.0.9/etcd-v2.0.9-linux-amd64.tar.gz -O ~/rpmbuild/SOURCES/etcd-v2.0.9-linux-amd64.tar.gz
-# wget https://raw.github.com/nmilford/rpm-etcd/master/etcd.initd -O ~/rpmbuild/SOURCES/etcd.initd
-# wget https://raw.github.com/nmilford/rpm-etcd/master/etcd.sysconfig -O ~/rpmbuild/SOURCES/etcd.sysconfig
-# wget https://raw.github.com/nmilford/rpm-etcd/master/etcd.nofiles.conf -O ~/rpmbuild/SOURCES/etcd.nofiles.conf
-# wget https://raw.github.com/nmilford/rpm-etcd/master/etcd.logrotate -O ~/rpmbuild/SOURCES/etcd.logrotate
-# rpmbuild -bb ~/rpmbuild/SPECS/etcd.spec
-
 %define debug_package %{nil}
 %define etcd_user  %{name}
 %define etcd_group %{name}
 %define etcd_data  %{_localstatedir}/lib/%{name}
 
 Name:      etcd
-Version:   2.0.9
+Version:   3.0.6
 Release:   1
 Summary:   A highly-available key value store for shared configuration and service discovery.
 License:   Apache 2.0
@@ -119,12 +94,4 @@ fi
 %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 
 %changelog
-* Tue Apr 10 2015 Hans-Joachim Skwirblies <hajo.skwirblies@gmail.com> bump version to 2.0.9
-* Tue Mar 17 2015 Marco Lebbink <marco@lebbink.net> 2.0.5 
-* Thu Sep 18 2014 Derek Douville <derekd@nodeprime.com> Remove golang, etcd is statically linked
-* Wed Sep 17 2014 Derek Douville <derekd@nodeprime.com> 0.4.6
-* Mon Feb 10 2014 Nathan Milford <nathan@milford.io> 0.3.0
-* Sat Dec 28 2013 Nathan Milford <nathan@milford.io> 0.2.0
-* Thu Dec 05 2013 Nathan Milford <nathan@milford.io> 0.2.0-rc1
-* Mon Aug 12 2013 Nathan Milford <nathan@milford.io> 0.1.0-1
 - Initial spec.
