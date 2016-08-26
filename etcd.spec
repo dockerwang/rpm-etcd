@@ -29,7 +29,7 @@
 %define etcd_data  %{_localstatedir}/lib/%{name}
 
 Name:      etcd
-Version:   2.0.9
+Version:   3.0.6
 Release:   1
 Summary:   A highly-available key value store for shared configuration and service discovery.
 License:   Apache 2.0
