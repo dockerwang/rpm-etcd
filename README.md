@@ -18,6 +18,7 @@ vim ~/.rpmmacros
 ### 设置编译脚本
 
 编辑 `etcd_rpm.sh` 中的 `etcd_version` 值为需要编译的版本号
+
 编辑 `rpm-etcd/SPECS/etcd.spec` 中的 `Version` 值为需要便衣的版本
 
 ### 执行编译
