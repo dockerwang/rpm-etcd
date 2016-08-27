@@ -94,4 +94,3 @@ fi
 %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 
 %changelog
-- Initial spec.
